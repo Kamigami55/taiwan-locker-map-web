@@ -86,17 +86,6 @@ class MyDocument extends Document {
           <meta name="application-name" content="Lockery" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#f9b599" />
-
-          {/* Global site tag (gtag.js) - Google Analytics */}
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-BKLP3JWX3C"
-          />
-          <script>
-            window.dataLayer = window.dataLayer || [] function gtag(){' '}
-            {dataLayer.push(arguments)}
-            gtag('js', new Date()) gtag('config', 'G-BKLP3JWX3C')
-          </script>
         </Head>
 
         <body>
