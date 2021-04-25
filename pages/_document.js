@@ -1,5 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
+import { GA_TRACKING_ID } from '../lib/gtag'
+
 class MyDocument extends Document {
   render() {
     return (
@@ -86,6 +88,24 @@ class MyDocument extends Document {
           <meta name="application-name" content="Lockery" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#f9b599" />
+
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
 
         <body>
